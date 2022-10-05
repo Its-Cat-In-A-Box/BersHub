@@ -1,0 +1,6 @@
+name: BersHub
+version: '${project.version}'
+main: berber.bershub.BersHub
+api-version: 1.19
+authors: [ BerBer ]
+description: An 1.8 minecraft powerhouse of a hub plugin designed to do everything you want one to
