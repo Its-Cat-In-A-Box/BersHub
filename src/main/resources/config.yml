@@ -1,0 +1,45 @@
+# General variable names
+# &PLAYERNAME - The player that triggered a event (eg. a join event)
+
+"ServerName": MyServ
+
+"MOTD": Hi &PLAYERNAME
+
+"GlobalBroadcastName":
+  # When enabled, will override all broadcasting names to be "Text" unless override is set to True in the options
+  "Enabled": False
+  "Text": Server
+
+"JoinMessage":
+  "DisableVanillaJoinMsg": True
+  "Enabled": True
+  # &WELCOMEMSGVAR - Randomly chooses a line from "welcomeMessageVariation to display, &PLAYERNAME can be used in the lines
+  # "BroadcastName" will be displayed before the message as follows
+  # ["BroadcastName"]: "Text"
+  # If =WELCOMEMSGVAR is not used, "Variations" is ignored even if you put 30 lines in it im sorry idk what to say
+  # If you want the entire welcome message to be random, just put &WELCOMEMSGVAR as the "Text"
+  "Text": =PLAYERNAME has joined the server! =WELCOMEMSGVAR
+  "BroadcastName":
+    "Override": False
+    "Text": Server
+  "Variations":
+    - Welcome them!
+    - Give them a cookie!
+    - Say hi to him? her? they? a cat? or maybe a taco?
+
+"LeaveMessage":
+  "DisableVanillaLeaveMsg": True
+  "Enabled": False
+  # =BYEMSGVAR - Randomly chooses a line from "welcomeMessageVariation to display, =PLAYERNAME can be used in the lines
+  # "BroadcastName" will be displayed before the message as follows
+  # ["BroadcastName"]: "Text"
+  # If =BYEMSGVAR is not used, "Variations" is ignored even if you put 30 lines in it im sorry idk what to say
+  # If you want the entire welcome message to be random, just put =BYEMSGVAR as the "Text"
+  "Text": =PLAYERNAME has left the server! =BYEMSGVAR
+  "BroadcastName":
+    "Override": False
+    "Text": Server
+  "Variations":
+    - CYA!
+    - They'll be back...
+    - I already miss them
