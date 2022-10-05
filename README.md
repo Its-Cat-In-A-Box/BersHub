@@ -25,3 +25,4 @@ Features:
   - Ever wanted to /spawn and go back to spawn? Never thought of idea
   - Build a portal that ships others to another bungeecord port (Bungeecord setup is not included in this plugin, infact i am not jesus and can't cater your every need)
   - More to come, just you wait (or comment for more stuff i dont mind)
+  - berber
