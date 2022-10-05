@@ -45,3 +45,10 @@
     - I already miss them
 
 "Commands":
+  "hub":
+    "world": world
+    #Add .5 to the x and z to be in the middle of the block
+    "x": 0.5
+    "y": 0
+    "z": 0.5
+    "oreintation"
