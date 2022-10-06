@@ -2,6 +2,8 @@ package berber.bershub;
 
 import berber.bershub.Listeners.playerJoin;
 import berber.bershub.Listeners.playerLeave;
+import berber.bershub.sql.MySQL;
+import berber.bershub.sql.SQLGetter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -14,6 +16,8 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 public final class BersHub extends JavaPlugin {
+    public static MySQL SQL;
+    public static SQLGetter data;
     Logger logger;
     @Override
     public void onEnable() {
@@ -24,7 +28,11 @@ public final class BersHub extends JavaPlugin {
         //Register Commands
 
         //Register SQL
-
+        if (getConfig().getBoolean("SQL.enabled")){
+            SQL = new MySQL(this);
+            data = new SQLGetter(this);
+            data.createTable();
+        }
         //Register Join msg
         getServer().getPluginManager().registerEvents(new playerJoin(this), this);
         //Register Leave msg

@@ -10,8 +10,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class CtpToSpawn implements CommandExecutor {
     public Location hub;
     public CtpToSpawn(JavaPlugin s){
-        hub = new Location(Bukkit.getWorld(s.getConfig().getString("Commands.hub.world")),
-                s.getConfig().getDouble("x"),s.getConfig().getDouble())
+
+
     }
 
     @Override

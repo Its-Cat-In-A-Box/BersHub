@@ -51,4 +51,22 @@
     "x": 0.5
     "y": 0
     "z": 0.5
-    "oreintation"
+    "orientation": 0
+
+"SQL":
+  "enabled": False
+  "numberOfTables": 1
+  "Tables":#More tables can be added if you follow the format of table 1
+    - "1": #Do NOT delete table 1, will cause entire SQL to malfunction, if you did then please remake another SQL
+        "Name": BersHubCore
+        "numberOfKeys": 3
+        "Keys": #Integer = INT, String/Text = VARCHAR, (100) refers to the length of the field
+          - "1":
+              "Name": PLAYERNAME
+              "Type": VARCHAR(100)
+          - "2":
+              "Name": UUID
+              "Type": VARCHAR(100)
+          - "3":
+              "Name": WINS
+              "Type": VARCHAR(100)
