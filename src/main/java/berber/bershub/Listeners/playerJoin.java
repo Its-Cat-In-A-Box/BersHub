@@ -25,7 +25,9 @@ public class playerJoin implements Listener{
         disableVanJoinMsg = config.getBoolean("JoinMessage.DisableVanillaJoinMsg");
         welcomeMessage = config.getString("JoinMessage.Text");
         broadCastName = config.getString("JoinMessage.BroadcastName");
+
         randomJoinMsg = config.getStringList("JoinMessage.Variations").toArray(new String[0]);
+
         if (config.getBoolean("GlobalBroadcastName.Enabled")){
             if (config.getBoolean("JoinMessage.BroadcastName.Override")){
                 broadCastName = config.getString("JoinMessage.BroadcastName.Text");
