@@ -1,5 +1,6 @@
 package berber.bershub.sql;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -17,7 +18,7 @@ public class MySQL {
     Connection connection;
     public MySQL(JavaPlugin server){
         FileConfiguration conf = server.getConfig();
-        enabled = conf.getBoolean("SQL.Enabled");
+        enabled = conf.getBoolean("SQL.enabled");
         host = conf.getString("SQL.Host");
         port = conf.getString("SQL.Port");
         database = conf.getString("SQL.Database");
@@ -29,16 +30,15 @@ public class MySQL {
         return(connection != null);
     }
 
-    public int connect(){
+    public void connect(){
         if (!isConnected() && enabled){
             try{
                 connection = DriverManager.getConnection("jdbc:mysql://"+host+":"+port+"/"+database+"?useSSL=false",username,password);
-                return 0;
             }catch (SQLException e){
-                return 1;
+                e.printStackTrace();
+
             }
         }
-        return 2;
     }
 
     public int disconnect(){

@@ -1,72 +1,74 @@
 # General variable names
 # &PLAYERNAME - The player that triggered a event (eg. a join event)
 
-"ServerName": MyServ
+ServerName: MyServ
 
-"MOTD": Hi &PLAYERNAME
+MOTD: Hi &PLAYERNAME
 
-"GlobalBroadcastName":
-  # When enabled, will override all broadcasting names to be "Text" unless override is set to True in the options
-  "Enabled": False
-  "Text": Server
+GlobalBroadcastName:
+  # When enabled, will override all broadcasting names to be Text unless override is set to True in the options
+  Enabled: False
+  Text: Server
 
-"JoinMessage":
-  "DisableVanillaJoinMsg": True
-  "Enabled": True
-  # &WELCOMEMSGVAR - Randomly chooses a line from "welcomeMessageVariation to display, &PLAYERNAME can be used in the lines
-  # "BroadcastName" will be displayed before the message as follows
-  # ["BroadcastName"]: "Text"
-  # If =WELCOMEMSGVAR is not used, "Variations" is ignored even if you put 30 lines in it im sorry idk what to say
-  # If you want the entire welcome message to be random, just put &WELCOMEMSGVAR as the "Text"
-  "Text": =PLAYERNAME has joined the server! =WELCOMEMSGVAR
-  "BroadcastName":
-    "Override": False
-    "Text": Server
-  "Variations":
+JoinMessage:
+  DisableVanillaJoinMsg: True
+  Enabled: True
+  # &WELCOMEMSGVAR - Randomly chooses a line from welcomeMessageVariation to display, &PLAYERNAME can be used in the lines
+  # BroadcastName will be displayed before the message as follows
+  # [BroadcastName]: Text
+  # If =WELCOMEMSGVAR is not used, Variations is ignored even if you put 30 lines in it im sorry idk what to say
+  # If you want the entire welcome message to be random, just put &WELCOMEMSGVAR as the Text
+  Text: =PLAYERNAME has joined the server! =WELCOMEMSGVAR
+  BroadcastName:
+    Override: False
+    Text: Server
+  Variations:
     - Welcome them!
     - Give them a cookie!
     - Say hi to him? her? they? a cat? or maybe a taco?
 
-"LeaveMessage":
-  "DisableVanillaLeaveMsg": True
-  "Enabled": False
-  # =BYEMSGVAR - Randomly chooses a line from "welcomeMessageVariation to display, =PLAYERNAME can be used in the lines
-  # "BroadcastName" will be displayed before the message as follows
-  # ["BroadcastName"]: "Text"
-  # If =BYEMSGVAR is not used, "Variations" is ignored even if you put 30 lines in it im sorry idk what to say
-  # If you want the entire welcome message to be random, just put =BYEMSGVAR as the "Text"
-  "Text": =PLAYERNAME has left the server! =BYEMSGVAR
-  "BroadcastName":
-    "Override": False
-    "Text": Server
-  "Variations":
+LeaveMessage:
+  DisableVanillaLeaveMsg: True
+  Enabled: False
+  # =BYEMSGVAR - Randomly chooses a line from welcomeMessageVariation to display, =PLAYERNAME can be used in the lines
+  # BroadcastName will be displayed before the message as follows
+  # [BroadcastName]: Text
+  # If =BYEMSGVAR is not used, Variations is ignored even if you put 30 lines in it im sorry idk what to say
+  # If you want the entire welcome message to be random, just put =BYEMSGVAR as the Text
+  Text: =PLAYERNAME has left the server! =BYEMSGVAR
+  BroadcastName:
+    Override: False
+    Text: Server
+  Variations:
     - CYA!
     - They'll be back...
     - I already miss them
 
-"Commands":
-  "hub":
-    "world": world
+Commands:
+  hub:
+    world: world
     #Add .5 to the x and z to be in the middle of the block
-    "x": 0.5
-    "y": 0
-    "z": 0.5
-    "orientation": 0
+    x: 0.5
+    y: 0
+    z: 0.5
+    orientation: 0
 
-"SQL":
-  "enabled": False
-  "numberOfTables": 1
-  "Tables":#More tables can be added if you follow the format of table 1
-    - "1": #Do NOT delete table 1, will cause entire SQL to malfunction, if you did then please remake another SQL
-        "Name": BersHubCore
-        "numberOfKeys": 3
-        "Keys": #Integer = INT, String/Text = VARCHAR, (100) refers to the length of the field
-          - "1":
-              "Name": PLAYERNAME
-              "Type": VARCHAR(100)
-          - "2":
-              "Name": UUID
-              "Type": VARCHAR(100)
-          - "3":
-              "Name": WINS
-              "Type": VARCHAR(100)
+SQL:
+  enabled: False
+  Host: localhost # If it is hosted on your local computer, input localhost, else input the ip address
+  Port: 0000
+  Database: MyDatabaseName
+  Username: root # Default is usually root, if not then please check at privileges page
+  Password: # If there is no password, leave space empty, it is recommended for DBs not port forwarded
+  Tables: #More tables can be added if you follow the format of table 1
+    #Do NOT delete table 1, will cause entire SQL to malfunction, if you did then please remake another SQL
+    - Name: BersHubCore
+      Keys: #Integer = INT, String/Text = VARCHAR, (100) refers to the length of the field
+        - Name: PLAYERNAME
+          Type: VARCHAR(100)
+
+        - Name: UUID
+          Type: VARCHAR(100)
+
+        - Name: WINS
+          Type: VARCHAR(100)

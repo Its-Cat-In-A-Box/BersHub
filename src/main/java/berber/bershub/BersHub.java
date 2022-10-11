@@ -30,7 +30,10 @@ public final class BersHub extends JavaPlugin {
         //Register SQL
         if (getConfig().getBoolean("SQL.enabled")){
             SQL = new MySQL(this);
+            SQL.connect();
             data = new SQLGetter(this);
+            logger.info(SQL.isConnected() ? "Creating table if not exists" : "Database is not connected, " +
+                    "unable to proceed");
             data.createTable();
         }
         //Register Join msg
